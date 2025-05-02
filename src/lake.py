@@ -37,6 +37,7 @@ class Lake(object):
             spill = max(0, mr-r_)
             s_ = ss[h] + self.deltaH*( n0/HH - rr[h+1] - spill ) - e*A/1000/HH
             s_ = min(s_, self.smax) 
+            s_ = max(s_, 0.0001)
             ss.append(s_)
 
         s = ss[-1] 
